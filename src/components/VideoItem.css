@@ -1,0 +1,12 @@
+.video-title {
+  font-weight: 800
+}
+
+img {
+  height: 130px
+}
+
+#video-item {
+  cursor: pointer;
+}
+ 
