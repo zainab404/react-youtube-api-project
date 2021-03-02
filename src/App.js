@@ -1,12 +1,12 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
+import SearchBar from './components/container/SearchBar';
+import VideoList from './components/container/VideoList';
+import VideoDetail from './components/presentational/VideoDetail';
 import axios from 'axios';
 
-class App extends React.Component {
+const App = () => {
   
-  state = {videos: [], selectedVideo: null};
+  const [video, setVideo] = useState(null);
 
   componentDidMount() {
     this.onSearchSubmit('hello world')
@@ -30,10 +30,8 @@ class App extends React.Component {
 
   onVideoSelect = (video) => {
     this.setState({selectedVideo: video});
-    // ^^^ the onVideoSelect callback function takes in a video object (being the individual video from the state list, "videos", and assigns it to the 'selected video' state object)
   }
 
-  render() {
     return (
         <div className="container mx-auto">
         <SearchBar onSubmit={this.onSearchSubmit}/>
@@ -44,6 +42,5 @@ class App extends React.Component {
       </div>
     ) 
   }
-};
 
 export default App;
